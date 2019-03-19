@@ -48,7 +48,23 @@
                       
                       <div class="col-sm-4 col-md-1"></div>
 
-                      <div class="col-sm-4 col-md-3 kv "> <input class="form-control  text-center" type="text" placeholder="Квартиры  &#x2022; &#x2022; &#x2022;"> </div>
+                      <div class="col-sm-4 col-md-3"> 
+                      <section class="main w">
+                        <div class="wrapper-demo">
+                          <div id="dd" class="wrapper-dropdown-3" tabindex="1">
+                            <p>Квартиры     &#x2022; &#x2022; &#x2022;</p>
+                              <ul class="dropdown">
+                                <li><a href="#">Квартиры</a></li>
+                                <li><a href="#">Офисы</a></li>
+                                <li><a href="#">Жилые дома</a></li>
+                                <li><a href="#">Участки</a></li>
+                              </ul>
+                          </div>
+        ​                </div>
+                      </section>
+                      </div>
+
+                      
 
                       <div class="col-sm-4 col-md-3 kv"><input class="form-control text-center" type="text"  placeholder="Купить"></div>
 
@@ -58,15 +74,43 @@
                       
                     </div>
                 </div>
-                  <br>
+                  
 
                     <div class="row content q m" >
 
                       <div class="col-sm-4 col-md-1"></div>
 
-                      <div class="col-sm-4 col-md-3 kv"><input class="form-control text-center" type="text" placeholder="3 - комн.  &#x2022; &#x2022; &#x2022;"></div>
+                      <div class="col-sm-4 col-md-3 ">
+                        <section class="main e">
+                        <div class="wrapper-demo">
+                          <div id="ddd" class="wrapper-dropdown-2" tabindex="1">
+                            <p>3 - комн.     &#x2022; &#x2022; &#x2022;</p>
+                              <ul class="dropdow">
+                                <li><a href="#">1 - комн.</a></li>
+                                <li><a href="#">2 - комн.</a></li>
+                                <li><a href="#">3 - комн.</a></li>
+                                <li><a href="#">4 - комн.</a></li>
+                              </ul>
+                          </div>
+        ​                </div>
+                      </section>
+                      </div>
 
-                      <div class="col-sm-4 col-md-3 kv"><input class="form-control text-center" type="text" placeholder="Новостройка  &#x2022; &#x2022; &#x2022;"></div>
+                      <div class="col-sm-4 col-md-3 ">
+                        <section class="main z">
+                        <div class="wrapper-demo">
+                          <div id="dddd" class="wrapper-dropdown-1" tabindex="1">
+                            <p>Новостройка     &#x2022; &#x2022; &#x2022;</p>
+                              <ul class="dropdo">
+                                <li><a href="#">Новостройка</a></li>
+                                <li><a href="#">Classic</a></li>
+                                <li><a href="#">Elita</a></li>
+                                <li><a href="#">Vintag</a></li>
+                              </ul>
+                          </div>
+        ​                </div>
+                      </section>
+                      </div>
 
                       <div class="col-sm-4 col-md-3"></div>
 
@@ -74,7 +118,7 @@
                     </div>
                     
 
-                    <br>
+                    
                     <div class="row content q" style="margin-left: 33px;">
                       <div class="col-sm-4 col-md-1"></div>
 
@@ -82,11 +126,18 @@
 
                       <div class="col-sm-4 col-md-3 kv n"><input class="form-control text-center" type="text"  placeholder="До"></div>
 
-                      <div class="form-group n">
-                        <select class="form-control" id="exampleFormControlSelect1">
-                          <option>som</option>
-                          <option>dollar</option>
-                        </select>
+                      <div class="col-sm-4 col-md-3 n">
+                        <section class="main">
+                        <div class="wrapper-demo">
+                          <div id="n" class="wrapper-dropdown-0" tabindex="1">
+                            <p>Som </p>
+                              <ul class="dropd">
+                                <li><a href="#">Dollar</a></li>
+                                <li><a href="#">Som</a></li>
+                              </ul>
+                          </div>
+        ​                </div>
+                      </section>
                       </div>
 
                       <div class="col-sm-4 col-md-1"></div>
@@ -122,5 +173,201 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+
+    <script type="text/javascript">
+      
+      function DropDown(el) {
+        this.dd = el;
+        this.placeholder = this.dd.children('p');
+        this.opts = this.dd.find('ul.dropdown > li');
+        this.val = '';
+        this.index = -1;
+        this.initEvents();
+      }
+      DropDown.prototype = {
+        initEvents : function() {
+          var obj = this;
+
+          obj.dd.on('click', function(event){
+            $(this).toggleClass('active');
+            return false;
+          });
+
+          obj.opts.on('click',function(){
+            var opt = $(this);
+            obj.val = opt.text();
+            obj.index = opt.index();
+            obj.placeholder.text(obj.val);
+          });
+        },
+        getValue : function() {
+          return this.val;
+        },
+        getIndex : function() {
+          return this.index;
+        }
+      }
+
+      $(function() {
+
+        var dd = new DropDown( $('#dd') );
+
+        $(document).click(function() {
+          // all dropdowns
+          $('.wrapper-dropdown-3').removeClass('active');
+        });
+
+      });
+
+    </script>
+
+
+    <script type="text/javascript">
+      
+      function DropDow(ele) {
+        this.ddd = ele;
+        this.placeholder = this.ddd.children('p');
+        this.opts = this.ddd.find('ul.dropdow > li');
+        this.val = '';
+        this.index = -1;
+        this.initEvents();
+      }
+      DropDow.prototype = {
+        initEvents : function() {
+          var obj = this;
+
+          obj.ddd.on('click', function(event){
+            $(this).toggleClass('active');
+            return false;
+          });
+
+          obj.opts.on('click',function(){
+            var opt = $(this);
+            obj.val = opt.text();
+            obj.index = opt.index();
+            obj.placeholder.text(obj.val);
+          });
+        },
+        getValue : function() {
+          return this.val;
+        },
+        getIndex : function() {
+          return this.index;
+        }
+      }
+
+      $(function() {
+
+        var ddd = new DropDow( $('#ddd') );
+
+        $(document).click(function() {
+          // all dropdowns
+          $('.wrapper-dropdown-2').removeClass('active');
+        });
+
+      });
+
+    </script>
+
+    <script type="text/javascript">
+      
+      function DropDo(ell) {
+        this.dddd = ell;
+        this.placeholder = this.dddd.children('p');
+        this.opts = this.dddd.find('ul.dropdo > li');
+        this.val = '';
+        this.index = -1;
+        this.initEvents();
+      }
+      DropDo.prototype = {
+        initEvents : function() {
+          var obj = this;
+
+          obj.dddd.on('click', function(event){
+            $(this).toggleClass('active');
+            return false;
+          });
+
+          obj.opts.on('click',function(){
+            var opt = $(this);
+            obj.val = opt.text();
+            obj.index = opt.index();
+            obj.placeholder.text(obj.val);
+          });
+        },
+        getValue : function() {
+          return this.val;
+        },
+        getIndex : function() {
+          return this.index;
+        }
+      }
+
+      $(function() {
+
+        var dddd = new DropDo( $('#dddd') );
+
+        $(document).click(function() {
+          // all dropdowns
+          $('.wrapper-dropdown-1').removeClass('active');
+        });
+
+      });
+
+    </script>
+
+
+    <script type="text/javascript">
+      
+      function Dropd(e) {
+        this.n = e;
+        this.placeholder = this.n.children('p');
+        this.opts = this.n.find('ul.dropd > li');
+        this.val = '';
+        this.index = -1;
+        this.initEvents();
+      }
+      Dropd.prototype = {
+        initEvents : function() {
+          var obj = this;
+
+          obj.n.on('click', function(event){
+            $(this).toggleClass('active');
+            return false;
+          });
+
+          obj.opts.on('click',function(){
+            var opt = $(this);
+            obj.val = opt.text();
+            obj.index = opt.index();
+            obj.placeholder.text(obj.val);
+          });
+        },
+        getValue : function() {
+          return this.val;
+        },
+        getIndex : function() {
+          return this.index;
+        }
+      }
+
+      $(function() {
+
+        var n = new Dropd( $('#n') );
+
+        $(document).click(function() {
+          // all dropdowns
+          $('.wrapper-dropdown-0').removeClass('active');
+        });
+
+      });
+
+    </script>
+
+
+    
   </body>
 </html>
