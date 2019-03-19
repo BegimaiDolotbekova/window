@@ -1,0 +1,174 @@
+.kv input{
+    max-width: 200px;
+    border-radius: 10px;
+    background: #f7f7f7;
+    color: #111;
+}
+.form-group select{
+    
+    border-radius: 10px;
+    background: #f7f7f7;
+    color: #111;
+}
+.form-group{
+    margin-left: 50px;
+}
+.row{
+    margin-left: 20px;
+
+}
+
+.two a{
+    text-decoration: none;
+    color: #111;
+}
+.header{
+    padding: 12px 0;
+}
+
+.one{
+    text-align: center;
+}
+
+.one a{
+    text-decoration: none;
+    background: #ebedec;
+    border-radius: 7px;
+    padding: 5px 90px;
+    color: #111;
+}
+
+.two{
+    padding: 20px 0;
+    font-size: 20px;
+
+}
+
+.open{
+    text-align: right;
+    padding: 20px 25px;
+}
+
+.q{
+    margin-left: 33px;
+}
+
+.btn-success{
+    border-radius: 10px;
+    margin-top: 5px;
+}
+
+.publish:hover{
+    background: #ebedec;
+    color: #fff;
+}
+
+.modalDialog {
+    position: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(234,234,234,0.74);
+    z-index: 99999;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    display: none;
+    pointer-events: none;
+
+}
+.modalDialog:target {
+    display: block;
+    pointer-events: auto;
+}
+
+ .modalDialog h2{
+    padding-right: 90px;
+ }
+
+.modalDialog > div {
+    max-width: 1100px;
+    height: 500px;
+    position: relative;
+    margin: 60px auto;
+    text-align: center;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+.close {
+    color: #adb5bd;
+    line-height: 25px;
+    position: absolute;
+    right: 10px;
+    text-align: center;
+    top: 5px;
+    max-width: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+}
+
+ 
+.close:hover { color: #3d8600; }
+
+
+@media (min-width:320px) and (max-width:724px) {
+ .modalDialog > div {
+    height: 630px;
+    width:360px;
+    margin-top: 20px;
+}
+.modalDialog{
+    height: 740px;
+}
+.row{
+    margin-top: -60px;
+}
+.row .btn-success{
+    margin-top: -5px;
+    margin-right: 25px;
+}
+.col-sm-6{
+    text-align: center;
+
+}
+.modalDialog h2{
+    padding-right: 0px;
+    padding-bottom: 20px;
+ }
+ .row div{
+    margin-bottom: 10px;
+
+}
+.container .content {
+    margin-left: 60px;
+}
+
+.container .m{
+    margin-left: 75px;
+}
+.container .n{
+    margin-left: 40px;
+}
+.container .form-group{
+    margin-left: 110px;
+}
+ 
+}
+
+@media (min-width:725px) and (max-width:1025px) {
+ .modalDialog > div {
+    width:700px;
+    height: 600px;
+}
+.modalDialog h2{
+    padding-right: 50px;
+ }
+
+
+}
